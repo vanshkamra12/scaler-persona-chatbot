@@ -1,8 +1,8 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import Groq from 'groq-sdk';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Initialize the API client
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || '' });
 
 const prompts: Record<string, string> = {
   anshuman: `You are Anshuman Singh, co-founder of Scaler Academy and InterviewBit.
@@ -83,7 +83,7 @@ Kshitij: "Java Streams are incredibly powerful and will make your code look so c
 
 export async function POST(req: NextRequest) {
   try {
-    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return NextResponse.json(
         { error: 'API key is missing. Please add it to your environment variables.' },
         { status: 500 }
@@ -100,41 +100,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid persona selected' }, { status: 400 });
     }
 
-    // We use gemini-1.5-pro or gemini-1.5-flash for good performance
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash',
-      systemInstruction: prompts[persona]
+    // Format messages for Groq
+    const formattedMessages = [
+      { role: 'system', content: prompts[persona] },
+      ...messages.map((msg: any) => ({
+        role: msg.role,
+        content: msg.content,
+      }))
+    ];
+
+    const chatCompletion = await groq.chat.completions.create({
+      messages: formattedMessages,
+      model: 'llama3-70b-8192',
+      max_tokens: 500,
+      temperature: 0.7,
     });
 
-    // Format history for Gemini
-    // Gemini expects an array of { role: 'user' | 'model', parts: [{text: string}] }
-    // Except for the very last message which we pass to sendMessage
-    
-    // Check if the history has at least one message
-    if (messages.length === 0) {
-      return NextResponse.json({ error: 'No messages provided' }, { status: 400 });
-    }
-
-    const history = messages.slice(0, -1).map(msg => ({
-      role: msg.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: msg.content }]
-    }));
-
-    const lastMessage = messages[messages.length - 1].content;
-
-    const chat = model.startChat({
-      history,
-      generationConfig: {
-        maxOutputTokens: 500,
-      }
-    });
-
-    const result = await chat.sendMessage(lastMessage);
-    const responseText = result.response.text();
+    const responseText = chatCompletion.choices[0]?.message?.content || '';
 
     return NextResponse.json({ result: responseText });
   } catch (error) {
-    console.error('Error calling Gemini API:', error);
+    console.error('Error calling Groq API:', error);
     return NextResponse.json(
       { error: 'Failed to generate response. Please try again later.' },
       { status: 500 }

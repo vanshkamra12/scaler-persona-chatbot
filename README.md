@@ -14,7 +14,7 @@ A persona-based AI chatbot built for the Prompt Engineering assignment at Scaler
 - Next.js (App Router)
 - React
 - Vanilla CSS Modules (for styling)
-- Google Gemini API (via `@google/generative-ai`)
+- Groq API (via `groq-sdk`)
 
 ## Setup Instructions
 
@@ -34,9 +34,9 @@ A persona-based AI chatbot built for the Prompt Engineering assignment at Scaler
      ```bash
      cp .env.example .env.local
      ```
-   - Open `.env.local` and add your Gemini API key:
+   - Open `.env.local` and add your Groq API key:
      ```env
-     GOOGLE_GENERATIVE_AI_API_KEY=your_actual_api_key_here
+     GROQ_API_KEY=your_actual_api_key_here
      ```
 
 4. **Run the development server:**
@@ -47,7 +47,7 @@ A persona-based AI chatbot built for the Prompt Engineering assignment at Scaler
 
 ## Deployment
 This project is configured to be easily deployed on Vercel. 
-- Ensure you add the `GOOGLE_GENERATIVE_AI_API_KEY` to the environment variables in your Vercel project settings.
+- Ensure you add the `GROQ_API_KEY` to the environment variables in your Vercel project settings.
 
 ## Project Structure
 - `/src/app/page.tsx`: Main chat interface.
