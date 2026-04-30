@@ -1,7 +1,7 @@
 import Groq from 'groq-sdk';
 import { NextRequest, NextResponse } from 'next/server';
 
-// Initialize the API client
+
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY || '' });
 
 const prompts: Record<string, string> = {
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid persona selected' }, { status: 400 });
     }
 
-    // Format messages for Groq
+
     const formattedMessages = [
       { role: 'system', content: prompts[persona] },
       ...messages.map((msg: any) => ({

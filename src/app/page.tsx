@@ -136,7 +136,6 @@ export default function ChatPage() {
 
   return (
     <div className={styles.container}>
-      {/* Sidebar */}
       <aside className={styles.sidebar}>
         <div className={styles.header}>
           <h1>Scaler AI Mentors</h1>
@@ -162,7 +161,6 @@ export default function ChatPage() {
         </div>
       </aside>
 
-      {/* Main Chat Area */}
       <main className={styles.mainContent}>
         <div className={styles.chatHeader}>
           <div className={styles.chatHeaderTitle}>
@@ -222,7 +220,6 @@ export default function ChatPage() {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area */}
         <div className={styles.inputArea}>
           <div className={styles.inputContainer}>
             <input
