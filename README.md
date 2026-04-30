@@ -16,6 +16,9 @@ A persona-based AI chatbot built for the Prompt Engineering assignment at Scaler
 - Vanilla CSS Modules (for styling)
 - Groq API (via `groq-sdk`)
 
+## Live Demo
+**[Live Deployed Application on Vercel](https://scaler-persona-chatbot-bice.vercel.app/)**
+
 ## Setup Instructions
 
 1. **Clone the repository:**
