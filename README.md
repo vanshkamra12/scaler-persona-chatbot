@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>✨ Scaler Persona-Based AI Chatbot</h1>
-  <p><i>A deeply context-aware, highly structured AI mentoring platform.</i></p>
+  <h1>✨ Scaler Persona AI Mentors</h1>
+  <p><i>An intelligent, context-aware AI mentoring platform for aspiring software engineers.</i></p>
   
   [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -10,9 +10,9 @@
 
 <br />
 
-Welcome to **Assignment 01**! This application allows users to experience real, context-driven conversations with three prominent Scaler personalities: **Anshuman Singh**, **Abhimanyu Saxena**, and **Kshitij Mishra**. 
+Welcome to my submission for **Assignment 01**! This platform allows users to engage in authentic, context-driven conversations with three legendary Scaler educators: **Anshuman Singh**, **Abhimanyu Saxena**, and **Kshitij Mishra**. 
 
-By utilizing rigorous system prompt engineering (including Few-Shot Learning, Chain-of-Thought reasoning, and strict behavioral constraints), the Groq API effortlessly embodies their unique mentoring styles, values, and teaching paradigms.
+By utilizing rigorous system prompt engineering (featuring Few-Shot examples, Chain-of-Thought reasoning, and strict behavioral guidelines), the Groq API flawlessly mirrors their unique mentoring styles, values, and technical expertise.
 
 ---
 
@@ -32,13 +32,13 @@ By utilizing rigorous system prompt engineering (including Few-Shot Learning, Ch
 
 ---
 
-## 🌟 Key Features
+## 🚀 Key Features
 
-* 🎭 **Dynamic Persona Switching**: Seamlessly toggle between three distinct educators. The conversation resets and suggestion chips adapt instantly upon switching.
-* 🧠 **Robust Prompt Architecture**: Powered by advanced prompt engineering embedded directly in the API route, preventing prompt-injection and guaranteeing hyper-realistic responses.
-* 🎨 **Premium UI/UX**: Built with purely Vanilla CSS modules—featuring glassmorphism, fluid micro-animations, a responsive layout, and an active typing indicator.
-* 🔒 **Secure Execution**: API keys are securely stored on the server-side (`/api/chat`), ensuring absolute safety from frontend exposure.
-* ⚡ **Zero-Config Deployment**: Engineered using the Next.js App Router to automatically deploy the frontend and backend in one single, frictionless Vercel deployment.
+* 🔄 **Dynamic Persona Switching**: Seamlessly toggle between the three distinct educators. The conversation automatically resets and custom suggestion chips adapt instantly.
+* 🛡️ **Robust Prompt Architecture**: Powered by advanced prompt engineering hidden directly in the API route, preventing prompt-injection and guaranteeing hyper-realistic mentor responses.
+* 💅 **Premium UI/UX**: Built with completely Vanilla CSS modules—featuring sleek glassmorphism, fluid micro-animations, a fully responsive layout, and an active typing indicator.
+* 🔐 **Secure Execution**: API keys are securely stored on the server-side (`/api/chat`), ensuring absolute safety from frontend exposure.
+* ⚡ **Zero-Config Deployment**: Engineered using the Next.js App Router to automatically deploy the frontend and backend in one frictionless Vercel deployment.
 
 ---
 
