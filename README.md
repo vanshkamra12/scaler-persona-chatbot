@@ -19,6 +19,15 @@ A persona-based AI chatbot built for the Prompt Engineering assignment at Scaler
 ## Live Demo
 **[Live Deployed Application on Vercel](https://scaler-persona-chatbot-bice.vercel.app/)**
 
+## Screenshots
+<div align="center">
+  <img src="./screenshots/anshuman.png" alt="Anshuman Singh Persona" width="600"/>
+  <br/>
+  <img src="./screenshots/abhimanyu.png" alt="Abhimanyu Saxena Persona" width="600"/>
+  <br/>
+  <img src="./screenshots/kshitij.png" alt="Kshitij Mishra Persona" width="600"/>
+</div>
+
 ## Setup Instructions
 
 1. **Clone the repository:**
